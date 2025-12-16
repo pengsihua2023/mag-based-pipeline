@@ -1,4 +1,4 @@
-# Viral Metagenome Analysis Pipeline
+# Viral Metagenome Analysis Pipeline based on nf-core/mag
 
 Complete pipeline for viral metagenome assembly and classification using nf-core/mag and direct containerized tools.
 
@@ -560,5 +560,6 @@ This pipeline uses open-source tools. Please cite appropriately.
 ---
 
 **Last updated:** December 3, 2025
+
 
 

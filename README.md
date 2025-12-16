@@ -2,14 +2,14 @@
 
 Complete pipeline for viral metagenome assembly and classification using nf-core/mag and direct containerized tools.
 
-## 📋 Overview
+## Overview
 
 This repository contains two independent workflows for analyzing viral metagenomes:
 
 1. **Short Reads Analysis** - Using nf-core/mag v2.5.4 (Illumina paired-end data)
 2. **Long Reads Analysis** - Using direct Flye + Kraken2 containers (Nanopore/PacBio data)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -36,7 +36,7 @@ sbatch run_long_reads.sh
 
 **Output:** `results_long/`
 
-## 📁 File Structure
+## File Structure
 
 ```
 .
@@ -50,7 +50,7 @@ sbatch run_long_reads.sh
 └── README.md                             # This file
 ```
 
-## 🧬 Pipeline Details
+## Pipeline Details
 
 ### Short Reads Workflow (nf-core/mag v2.5.4 + Custom Contig Classification)
 
@@ -93,7 +93,7 @@ sbatch run_long_reads.sh
 - Memory: 256 GB
 - Time: 24 hours (max)
 
-## 📊 Output Structure
+## Output Structure
 
 ### Short Reads Output
 
@@ -134,7 +134,7 @@ results_long/
 └── llnl_66d1047e_reads_kraken2_report.txt      # Read classification
 ```
 
-## 🗄️ Database Setup
+## Database Setup
 
 ### Kraken2 Viral Database
 
@@ -157,7 +157,7 @@ kraken2-build --build --db $DB_DIR --threads 32
 kraken2-build --clean --db $DB_DIR
 ```
 
-## 📝 Sample Data
+## Sample Data
 
 ### Current Samples
 
@@ -189,7 +189,7 @@ LONG_READS="/path/to/your/long_reads.fastq.gz"
 SAMPLE="your_sample_name"
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Issue: /lscratch Mount Error
 
@@ -234,7 +234,7 @@ rm -rf /home/$USER/.apptainer/cache/oci-tmp/*
 export APPTAINER_CACHEDIR="/scratch/path/to/cache"
 ```
 
-## 📈 Results Analysis
+## Results Analysis
 
 ### View Kraken2 Reports
 
@@ -280,7 +280,7 @@ cat results_long/flye_assembly/assembly_info.txt
 grep -c "^>" results_long/flye_assembly/assembly.fasta  # Contig count
 ```
 
-## 🛠️ Advanced Usage
+## Advanced Usage
 
 ### Resume Failed Runs
 
@@ -313,14 +313,14 @@ KRAKEN2_DB="/path/to/your/kraken2/db"
 KRAKEN2_DB="/path/to/your/kraken2/db"
 ```
 
-## 📚 Documentation
+## Documentation
 
 - **Database Setup:** [`DATABASE_SETUP.md`](DATABASE_SETUP.md)
 - **nf-core/mag Documentation:** https://nf-co.re/mag/
 - **Flye Documentation:** https://github.com/fenderglass/Flye
 - **Kraken2 Manual:** https://github.com/DerrickWood/kraken2/wiki
 
-## 💡 Best Practices
+## Best Practices
 
 1. **Verify input files** before running:
    ```bash
@@ -353,7 +353,7 @@ KRAKEN2_DB="/path/to/your/kraken2/db"
    rm -rf results_long/flye_assembly/00-assembly/
    ```
 
-## 🆘 Support
+## Support
 
 ### Check Logs
 
@@ -375,7 +375,7 @@ KRAKEN2_DB="/path/to/your/kraken2/db"
 | Container not found | Check container version |
 | Out of memory | Increase SLURM memory |
 
-## 📊 Performance
+## Performance
 
 ### Short Reads (llnl_66ce4dde)
 - **Input:** 1.3 GB (paired-end)
@@ -389,7 +389,7 @@ KRAKEN2_DB="/path/to/your/kraken2/db"
 - **Assembly:** Flye metagenomic mode
 - **CPU hours:** ~50-100
 
-## 🎯 Citation
+## Citation
 
 If you use this pipeline, please cite:
 
@@ -417,7 +417,7 @@ Genome Biol 20, 257 (2019).
 https://doi.org/10.1186/s13059-019-1891-0
 ```
 
-## 📝 Version Information
+## Version Information
 
 - **nf-core/mag:** v2.5.4
 - **Nextflow:** v25.04.7
@@ -426,7 +426,7 @@ https://doi.org/10.1186/s13059-019-1891-0
 - **MEGAHIT:** v1.2.9 (containerized)
 - **metaSPAdes:** v3.15.3 (containerized)
 
-## 🔄 Workflow Comparison
+## Workflow Comparison
 
 | Feature | Short Reads | Long Reads |
 |---------|-------------|------------|
@@ -439,7 +439,7 @@ https://doi.org/10.1186/s13059-019-1891-0
 | Runtime | ~5-10 hours (with contig classification) | ~2-4 hours |
 | Automation | Integrated in one script | Integrated in one script |
 
-## 🎓 Understanding Results
+## Understanding Results
 
 ### Kraken2 Report Format
 
@@ -519,7 +519,7 @@ awk '$6~/Viruses/ {sum+=$2} END {print "Total long reads viral contigs:", sum}' 
     results_long/llnl_66d1047e_contigs_kraken2_report.txt
 ```
 
-## 🛡️ Important Notes
+## Important Notes
 
 ### Container Cache
 
@@ -546,18 +546,19 @@ This avoids home directory disk quota issues.
 - Direct container approach bypasses all validation issues
 - **Custom contig classification added** because nf-core/mag v2.5.4 doesn't classify assembled contigs
 
-## 📧 Contact
+## Contact
 
 For issues or questions, please check:
 - `.nextflow.log` for detailed error messages
 - SLURM error logs: `*_%j.err`
 - Execution reports: `results_*/execution_report.html`
 
-## 📄 License
+## License
 
 This pipeline uses open-source tools. Please cite appropriately.
 
 ---
 
 **Last updated:** December 3, 2025
+
 

@@ -108,18 +108,17 @@ results_short/
 │   └── SPAdes/
 │       ├── SPAdes-group-viral_group1_contigs.fasta.gz # SPAdes contigs (102M)
 │       └── SPAdes-group-viral_group1_scaffolds.fasta.gz
-├── Taxonomy/
-│   ├── kraken2/
-│   │   └── llnl_66ce4dde/
-│   │       ├── llnl_66ce4dde.kraken2_report.txt      # Reads classification (by nf-core/mag)
-│   │       └── taxonomy.krona.html                    # Krona visualization
-│   └── contigs/                                       # Contig classification (custom)
-│       ├── llnl_66ce4dde_MEGAHIT_kraken2_report.txt  # MEGAHIT contigs classification
-│       ├── llnl_66ce4dde_MEGAHIT_classification.txt  # Detailed results
-│       ├── llnl_66ce4dde_SPAdes_kraken2_report.txt   # SPAdes contigs classification
-│       └── llnl_66ce4dde_SPAdes_classification.txt   # Detailed results
-├── execution_report.html                              # Workflow execution report
-└── execution_timeline.html                            # Timeline visualization
+└── Taxonomy/
+    ├── kraken2/
+    │   └── llnl_66ce4dde/
+    │       ├── llnl_66ce4dde.kraken2_report.txt      # Reads classification (by nf-core/mag)
+    │       └── taxonomy.krona.html                    # Krona visualization
+    └── contigs/                                       # Contig classification (custom)
+        ├── llnl_66ce4dde_MEGAHIT_kraken2_report.txt  # MEGAHIT contigs classification
+        ├── llnl_66ce4dde_MEGAHIT_classification.txt  # Detailed results
+        ├── llnl_66ce4dde_SPAdes_kraken2_report.txt   # SPAdes contigs classification
+        └── llnl_66ce4dde_SPAdes_classification.txt   # Detailed results
+
 ```
 
 ### Long Reads Output
@@ -560,6 +559,7 @@ This pipeline uses open-source tools. Please cite appropriately.
 ---
 
 **Last updated:** December 3, 2025
+
 
 
 

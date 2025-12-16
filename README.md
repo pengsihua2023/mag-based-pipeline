@@ -308,28 +308,6 @@ KRAKEN2_DB="/path/to/your/kraken2/db"
    rm -rf results_long/flye_assembly/00-assembly/
    ```
 
-## Support
-
-### Check Logs
-
-**Short reads:**
-- Output: `nfcore_mag_short_*.out`
-- Error: `nfcore_mag_short_*.err`
-- Nextflow: `.nextflow.log`
-
-**Long reads:**
-- Output: `long_reads_flye_*.out`
-- Error: `long_reads_flye_*.err`
-
-### Common Issues
-
-| Issue | Solution |
-|-------|----------|
-| /lscratch mount error | Fixed in config file |
-| Disk quota exceeded | Cache set to /scratch |
-| Container not found | Check container version |
-| Out of memory | Increase SLURM memory |
-
 ## Performance
 
 ### Short Reads (llnl_66ce4dde)
@@ -425,7 +403,7 @@ https://doi.org/10.1186/s13059-019-1891-0
 - See `results_long/flye_assembly/assembly_info.txt`
 - Check assembly graph: `assembly_graph.gfa`
 
-## 🔬 Analyzing Your Results
+## Analyzing Your Results
 
 ### Extract Viral Sequences
 
@@ -501,12 +479,6 @@ This avoids home directory disk quota issues.
 - Direct container approach bypasses all validation issues
 - **Custom contig classification added** because nf-core/mag v2.5.4 doesn't classify assembled contigs
 
-## Contact
-
-For issues or questions, please check:
-- `.nextflow.log` for detailed error messages
-- SLURM error logs: `*_%j.err`
-- Execution reports: `results_*/execution_report.html`
 
 ## License
 
@@ -515,6 +487,7 @@ This pipeline uses open-source tools. Please cite appropriately.
 ---
 
 **Last updated:** December 3, 2025
+
 
 
 

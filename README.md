@@ -45,9 +45,8 @@ sbatch run_long_reads.sh
 ├── nfcore_mag_v3_no_validation.config    # Configuration for nf-core/mag
 ├── samplesheet_mag_short_reads.csv       # Short reads sample sheet template
 ├── samplesheet_mag_long_reads.csv        # Long reads sample sheet template
-├── verify_input_files.sh                 # Input file verification script
-├── DATABASE_SETUP.md                     # Kraken2 database setup guide
-└── README.md                             # This file
+└── verify_input_files.sh                 # Input file verification script
+
 ```
 
 ## Pipeline Details
@@ -559,6 +558,7 @@ This pipeline uses open-source tools. Please cite appropriately.
 ---
 
 **Last updated:** December 3, 2025
+
 
 
 

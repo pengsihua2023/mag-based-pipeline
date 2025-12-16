@@ -187,50 +187,7 @@ LONG_READS="/path/to/your/long_reads.fastq.gz"
 SAMPLE="your_sample_name"
 ```
 
-## Troubleshooting
 
-### Issue: /lscratch Mount Error
-
-**Error:**
-```
-FATAL: container creation failed: mount /lscratch->/lscratch error
-```
-
-**Solution:**
-Already fixed in `nfcore_mag_v3_no_validation.config` with:
-```groovy
-apptainer {
-    autoMounts = false
-    runOptions = '--no-mount /lscratch --bind /scratch:/scratch --bind /home:/home'
-}
-```
-
-### Issue: Disk Quota Exceeded
-
-**Error:**
-```
-disk quota exceeded
-```
-
-**Solution:**
-Set Apptainer cache to `/scratch`:
-```bash
-export APPTAINER_CACHEDIR="/scratch/sp96859/Meta-genome-data-analysis/Apptainer/cache"
-export APPTAINER_TMPDIR="/scratch/sp96859/Meta-genome-data-analysis/Apptainer/tmp"
-```
-
-Already configured in `run_long_reads.sh`.
-
-### Issue: Container Pull Failed
-
-**Solution:**
-```bash
-# Clean Apptainer cache
-rm -rf /home/$USER/.apptainer/cache/oci-tmp/*
-
-# Or set cache to /scratch (already in scripts)
-export APPTAINER_CACHEDIR="/scratch/path/to/cache"
-```
 
 ## Results Analysis
 
@@ -558,6 +515,7 @@ This pipeline uses open-source tools. Please cite appropriately.
 ---
 
 **Last updated:** December 3, 2025
+
 
 
 
